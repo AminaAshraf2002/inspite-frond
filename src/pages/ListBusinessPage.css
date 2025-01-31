@@ -108,17 +108,53 @@
   
  
   
-  .media-upload {
-    border: 2px dashed #ddd;
-    padding: 2rem;
-    text-align: center;
-    cursor: pointer;
-    transition: border-color 0.3s ease;
-  }
-  
-  .media-upload:hover {
-    border-color: #007bff;
-  }
+.media-upload {
+  border: 2px dashed #dadce0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.media-upload:hover {
+  border-color: #1a73e8;
+}
+
+.upload-icon {
+  color: #5f6368;
+  margin-bottom: 8px;
+}
+
+.upload-text {
+  display: block;
+  color: #5f6368;
+  font-size: 0.875rem;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-list {
+  margin-top: 10px;
+}
+
+.file-item {
+  background-color: #f1f3f4;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+  color: #5f6368;
+}
   
   .media-upload svg {
     font-size: 2.5rem;

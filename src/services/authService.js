@@ -1,10 +1,10 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
-export const authService = {
+const authService = {
     // Business/Regular user login
     login: async (email, password) => {
         try {
-            const response = await fetch(`${API_URL}/auth/login`, {
+            const response = await fetch(`${API_URL}/api/auth/login`, {  // Added /api
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export const authService = {
     // Admin login
     adminLogin: async (email, password) => {
         try {
-            const response = await fetch(`${API_URL}/auth/admin/login`, {
+            const response = await fetch(`${API_URL}/api/auth/admin/login`, {  // Added /api
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ export const authService = {
     // Registration
     register: async (userData) => {
         try {
-            const response = await fetch(`${API_URL}/auth/register`, {
+            const response = await fetch(`${API_URL}/api/auth/register`, {  // Added /api
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,5 +68,16 @@ export const authService = {
         } catch (error) {
             throw error;
         }
+    },
+
+    logout: () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('userEmail');
+    },
+
+    isAuthenticated: () => {
+        return !!localStorage.getItem('token');
     }
 };
+
+export default authService;

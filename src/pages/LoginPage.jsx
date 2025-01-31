@@ -34,11 +34,19 @@ const LoginPage = () => {
       const loginFunction = isBusinessLogin ? authService.login : authService.adminLogin;
       const response = await loginFunction(formData.email, formData.password);
 
-      localStorage.setItem('token', response.token);
-      localStorage.setItem('userEmail', formData.email);
 
-      navigate('/business');
+      if (response.token) {
+        localStorage.setItem('token', response.token);
+        if (formData.rememberMe) {
+          localStorage.setItem('userEmail', formData.email);
+        }
+        // Navigate based on user type
+        navigate(isBusinessLogin ? '/business' : '/admin/dashboard');
+      } else {
+        throw new Error('No token received');
+      }
     } catch (err) {
+      console.error('Login error:', err);
       setError(err.message || 'Login failed. Please try again.');
     } finally {
       setLoading(false);

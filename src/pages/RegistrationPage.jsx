@@ -1,7 +1,8 @@
+// src/pages/RegistrationPage.js
 import React, { useState } from 'react';
 import { Eye } from 'lucide-react';
-import { authService } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
+import authService from '../services/authService';  // because we used export default
 import './RegistrationPage.css';
 
 const RegistrationPage = () => {
@@ -52,26 +53,35 @@ const RegistrationPage = () => {
         if (!validateForm()) {
             return;
         }
-
+    
         setLoading(true);
         setError('');
-
+    
         try {
             const { confirmPassword, agreeToTerms, ...registrationData } = formData;
             const response = await authService.register(registrationData);
-
-            // Store authentication data
-            localStorage.setItem('token', response.token);
-            localStorage.setItem('userEmail', formData.email);
-
-            // Redirect to dashboard
-            navigate('/list-business');
+    
+            if (response.token) {
+                // Store authentication data
+                localStorage.setItem('token', response.token);
+                localStorage.setItem('userEmail', formData.email);
+    
+                // Show success message (optional)
+                toast.success('Registration successful!');
+    
+                // Redirect to dashboard
+                navigate('/list-business');
+            } else {
+                throw new Error('Registration failed - no token received');
+            }
         } catch (err) {
-            setError(err.message || 'Registration failed');
+            console.error('Registration error:', err);
+            setError(err.message || 'Registration failed. Please try again.');
         } finally {
             setLoading(false);
         }
     };
+    
 
     return (
         <div className="registration-container">

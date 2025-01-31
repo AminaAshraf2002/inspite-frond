@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './ListBusinessPage.css';
-import { FaUpload } from 'react-icons/fa';
+import { Upload } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { createBusiness } from '../services/api/businessService';
+import { businessService } from '../services/businessService';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './ListBusinessPage.css';
 
 function ListBusinessPage() {
     const navigate = useNavigate();
@@ -81,18 +81,25 @@ function ListBusinessPage() {
     };
 
     const handleFileUpload = (e, fileType) => {
-        const files = Array.from(e.target.files);
-        if (fileType === 'images' && files.length > 5) {
-            toast.error('Maximum 5 images allowed');
+        const uploadedFiles = Array.from(e.target.files);
+        const maxFiles = fileType === 'images' ? 5 : 2;
+        const maxSize = 5 * 1024 * 1024; // 5MB
+
+        if (uploadedFiles.length > maxFiles) {
+            toast.error(`Maximum ${maxFiles} ${fileType} allowed`);
             return;
         }
-        if (fileType === 'videos' && files.length > 2) {
-            toast.error('Maximum 2 videos allowed');
+
+        // Check file sizes
+        const oversizedFiles = uploadedFiles.filter(file => file.size > maxSize);
+        if (oversizedFiles.length > 0) {
+            toast.error('Some files are too large. Maximum size is 5MB per file');
             return;
         }
+
         setFiles(prev => ({
             ...prev,
-            [fileType]: files
+            [fileType]: uploadedFiles
         }));
         toast.success(`${fileType} uploaded successfully`);
     };
@@ -128,7 +135,7 @@ function ListBusinessPage() {
                 formData.append('videos', file);
             });
 
-            await createBusiness(token, formData);
+            await businessService.createBusiness(formData);
             toast.success('Business listing submitted successfully!');
             setTimeout(() => navigate('/business'), 2000);
 
@@ -265,26 +272,52 @@ function ListBusinessPage() {
                         <div className="form-group">
                             <label>Upload Images (max 5)</label>
                             <div className="media-upload">
-                                <FaUpload />
+                                <div className="upload-icon">
+                                    <Upload size={24} />
+                                </div>
                                 <input 
                                     type="file" 
                                     multiple 
                                     accept="image/*" 
-                                    onChange={(e) => handleFileUpload(e, 'images')} 
+                                    onChange={(e) => handleFileUpload(e, 'images')}
+                                    className="file-input"
                                 />
+                                <span className="upload-text">Click or drag files to upload</span>
                             </div>
+                            {files.images.length > 0 && (
+                                <div className="file-list">
+                                    {files.images.map((file, index) => (
+                                        <div key={index} className="file-item">
+                                            {file.name}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                         <div className="form-group">
                             <label>Upload Videos (max 2)</label>
                             <div className="media-upload">
-                                <FaUpload />
+                                <div className="upload-icon">
+                                    <Upload size={24} />
+                                </div>
                                 <input 
                                     type="file" 
                                     multiple 
                                     accept="video/*" 
-                                    onChange={(e) => handleFileUpload(e, 'videos')} 
+                                    onChange={(e) => handleFileUpload(e, 'videos')}
+                                    className="file-input"
                                 />
+                                <span className="upload-text">Click or drag files to upload</span>
                             </div>
+                            {files.videos.length > 0 && (
+                                <div className="file-list">
+                                    {files.videos.map((file, index) => (
+                                        <div key={index} className="file-item">
+                                            {file.name}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </section>
