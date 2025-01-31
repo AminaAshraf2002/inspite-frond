@@ -1,0 +1,224 @@
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fb;
+  }
+  
+  .dashboard-main {
+    flex: 1;
+    padding: 24px;
+    overflow-x: hidden;
+  }
+  
+  .dashboard-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+  }
+  
+  /* Profile Settings Page */
+  .profile-settings-page {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .profile-settings-page h1 {
+    font-size: 28px;
+    color: #1a2035;
+    margin-bottom: 32px;
+    font-weight: 600;
+  }
+  
+  /* Settings Sections */
+  .settings-section {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+  
+  .settings-section h2 {
+    font-size: 20px;
+    color: #2d3748;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  
+  .settings-section h3 {
+    font-size: 16px;
+    color: #4a5568;
+    margin: 16px 0;
+    font-weight: 500;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="password"],
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #2d3748;
+    transition: border-color 0.2s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .form-group input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  .form-group input[disabled] {
+    background-color: #f8fafc;
+    cursor: not-allowed;
+  }
+  
+  /* Checkbox Labels */
+  .form-group label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 12px;
+  }
+  
+  /* Update Button */
+  .update-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .update-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .update-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Security Settings Specific */
+  .settings-section:last-child .form-group:last-child {
+    margin-bottom: 24px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .dashboard-main {
+      padding: 20px;
+    }
+    
+    .dashboard-content {
+      padding: 24px;
+    }
+    
+    .profile-settings-page h1 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+    
+    .settings-section {
+      padding: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    .update-button {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard-main {
+      padding: 16px;
+    }
+    
+    .dashboard-content {
+      padding: 20px;
+    }
+    
+    .settings-section {
+      padding: 16px;
+    }
+    
+    .profile-settings-page h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    
+    .settings-section h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="password"],
+    .form-group textarea {
+      padding: 8px 10px;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .dashboard-container {
+      display: block;
+    }
+    
+    .settings-section {
+      break-inside: avoid;
+      border: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    
+    .update-button {
+      display: none;
+    }
+  }

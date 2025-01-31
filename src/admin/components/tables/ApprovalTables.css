@@ -1,0 +1,314 @@
+.approval-table-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Table Header */
+.table-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.bulk-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.bulk-action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.bulk-approve,
+.bulk-reject {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.bulk-approve {
+    background-color: #059669;
+    color: white;
+}
+
+.bulk-approve:hover {
+    background-color: #047857;
+}
+
+.bulk-reject {
+    background-color: #dc2626;
+    color: white;
+}
+
+.bulk-reject:hover {
+    background-color: #b91c1c;
+}
+
+/* Checkbox Styles */
+.checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Table Styles */
+.approval-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.approval-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.approval-table td {
+    padding: 16px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.approval-table tr:hover {
+    background-color: #f9fafb;
+}
+
+.approval-table tr.selected {
+    background-color: #f3f4f6;
+}
+
+.checkbox-cell {
+    width: 40px;
+    text-align: center;
+}
+
+/* Business Info Styles */
+.business-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.business-name {
+    font-weight: 500;
+    color: #111827;
+}
+
+.business-email {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Approval Type Badge */
+.approval-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+/* Date Info Styles */
+.date-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.date {
+    color: #111827;
+}
+
+.time-ago {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Status Styles */
+.status-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.status-icon.pending { color: #d97706; }
+.status-icon.review { color: #4f46e5; }
+.status-icon.approved { color: #059669; }
+.status-icon.rejected { color: #dc2626; }
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-badge.pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.status-badge.under_review {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+.status-badge.approved {
+    background-color: #dcfce7;
+    color: #059669;
+}
+
+.status-badge.rejected {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* Documents Cell Styles */
+.documents-cell {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.document-badge {
+    padding: 2px 8px;
+    background-color: #f3f4f6;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #374151;
+}
+
+/* Action Buttons Styles */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.action-btn.view:hover { color: #3b82f6; }
+.action-btn.approve:hover { color: #059669; }
+.action-btn.reject:hover { color: #dc2626; }
+
+/* Table Footer Styles */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.rows-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.rows-per-page select {
+    padding: 4px 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination-btn {
+    padding: 6px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+}
+
+.pagination-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.page-info {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .approval-table-container {
+        overflow-x: auto;
+    }
+    
+    .approval-table {
+        min-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bulk-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .bulk-action-buttons {
+        width: 100%;
+    }
+    
+    .bulk-approve,
+    .bulk-reject {
+        flex: 1;
+    }
+    
+    .table-footer {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .rows-per-page,
+    .pagination {
+        width: 100%;
+        justify-content: center;
+    }
+}

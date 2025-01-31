@@ -1,0 +1,139 @@
+/* src/components/Layout/Header/Header.css */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #2962FF;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2962FF;
+}
+
+/* Desktop Auth Buttons */
+.desktop-auth {
+    display: flex;
+    gap: 15px;
+}
+
+.login-btn, .register-btn {
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    color: #2962FF;
+    border: 1px solid #2962FF;
+}
+
+.register-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: 1px solid #4CAF50;
+}
+
+.login-btn:hover {
+    background-color: #2962FF;
+    color: #fff;
+}
+
+.register-btn:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop-nav, .desktop-auth {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-nav.active {
+        display: flex;
+    }
+
+    .mobile-nav .nav-link {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Animation for mobile menu */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-nav.active {
+    animation: slideDown 0.3s ease forwards;
+}

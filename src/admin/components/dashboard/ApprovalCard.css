@@ -1,0 +1,246 @@
+/* components/cards/ApprovalCard.css */
+.approval-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.approval-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.approval-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.business-info {
+    flex: 1;
+}
+
+.business-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 8px 0;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status.pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.status.under_review {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+.status.approved {
+    background-color: #dcfce7;
+    color: #059669;
+}
+
+.status.rejected {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.approval-type {
+    font-size: 13px;
+    color: #6b7280;
+    background-color: #f3f4f6;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-left: 12px;
+}
+
+.approval-content {
+    margin-bottom: 16px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-item .label {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.info-item span:not(.label) {
+    font-size: 14px;
+    color: #111827;
+}
+
+.approval-notes {
+    background-color: #f9fafb;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+}
+
+.approval-notes p {
+    font-size: 13px;
+    color: #374151;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.approval-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.view-btn,
+.approve-btn,
+.reject-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.view-btn {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.view-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.approve-btn {
+    background-color: #059669;
+    color: white;
+}
+
+.approve-btn:hover {
+    background-color: #047857;
+}
+
+.reject-btn {
+    background-color: #dc2626;
+    color: white;
+}
+
+.reject-btn:hover {
+    background-color: #b91c1c;
+}
+
+.action-buttons button svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Loading State */
+.approval-card.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Document List Styles */
+.document-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background-color: #f3f4f6;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #374151;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .approval-card {
+        padding: 16px;
+    }
+
+    .approval-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .approval-type {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .approval-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .action-buttons {
+        width: 100%;
+    }
+
+    .view-btn,
+    .approve-btn,
+    .reject-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .view-btn,
+    .approve-btn,
+    .reject-btn {
+        width: 100%;
+    }
+}

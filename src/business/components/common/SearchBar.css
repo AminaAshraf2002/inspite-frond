@@ -1,0 +1,58 @@
+.business-search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+  
+  .business-search-bar:focus-within {
+    border-color: #3498db;
+  }
+  
+  .business-search-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .business-search-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .business-search-button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Variant Modifiers */
+  .business-search-bar.large .business-search-input {
+    font-size: 16px;
+    padding: 12px;
+  }
+  
+  .business-search-bar.large .business-search-button {
+    padding: 12px 18px;
+  }
+  
+  .business-search-bar.rounded {
+    border-radius: 20px;
+  }
+  
+  .business-search-bar.transparent {
+    background-color: transparent;
+    border-color: transparent;
+  }
+  
+  .business-search-bar.transparent:focus-within {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+  }

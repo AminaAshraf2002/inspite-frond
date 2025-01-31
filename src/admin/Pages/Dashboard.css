@@ -1,0 +1,295 @@
+.dashboard-containers {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: -50px;
+
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .dashboard-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .date-filter select {
+    padding: 8px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+    color: #374151;
+  }
+  
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .stat-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .stat-icon.businesses { background-color: #3b82f6; }
+  .stat-icon.revenue { background-color: #10b981; }
+  .stat-icon.listings { background-color: #6366f1; }
+  .stat-icon.approvals { background-color: #f59e0b; }
+  
+  .stat-trend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .stat-trend.positive {
+    background-color: #dcfce7;
+    color: #059669;
+  }
+  
+  .stat-trend.negative {
+    background-color: #fee2e2;
+    color: #dc2626;
+  }
+  
+  .stat-content h3 {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+  }
+  
+  .stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  
+  .stat-comparison {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  
+  /* Dashboard Content */
+  .dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .section-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .view-all {
+    font-size: 14px;
+    color: #3b82f6;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Transactions Section */
+  .transactions-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .transaction-item:hover {
+    background-color: #f9fafb;
+  }
+  
+  .transaction-info h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  
+  .transaction-date {
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  .transaction-amount {
+    text-align: right;
+  }
+  
+  .amount {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  
+  .status {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+  
+  .status.completed {
+    background-color: #dcfce7;
+    color: #059669;
+  }
+  
+  .status.pending {
+    background-color: #fef3c7;
+    color: #d97706;
+  }
+  
+  /* Activities Section */
+  .activities-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .activity-item:hover {
+    background-color: #f9fafb;
+  }
+  
+  .activity-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .activity-icon.registration { background-color: #3b82f6; }
+  .activity-icon.approval { background-color: #10b981; }
+  .activity-icon.transaction { background-color: #6366f1; }
+  
+  .activity-info h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 2px;
+  }
+  
+  .activity-info p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 2px;
+  }
+  
+  .activity-time {
+    font-size: 12px;
+    color: #9ca3af;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .dashboard-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-container {
+      padding: 16px;
+    }
+  
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  
+    .transaction-item,
+    .activity-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .transaction-amount {
+      text-align: left;
+      margin-top: 8px;
+    }
+  }

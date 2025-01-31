@@ -1,0 +1,301 @@
+/* src/pages/About/About.css */
+:root {
+    --primary-color: #2962FF;
+    --secondary-color: #4CAF50;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --dark-gray: #333333;
+    --text-color: #333333;
+}
+
+.about-page {
+    padding-top: 80px; /* For fixed header */
+}
+
+/* Hero Section */
+.about-hero {
+    background-image: url(../assets/yellow.jpg);
+    background-size: cover;   /* Makes image cover the entire section */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    background-attachment: fixed; /* (Optional) Creates a parallax effect */
+    
+    height: 280px;  /* Fixed height */
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+
+.about-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-hero p {
+    font-size: 24px;
+    opacity: 0.9;
+}
+
+/* Company Overview */
+.overview {
+    padding: 80px 0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.overview h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.overview p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px 0;
+    background-color: var(--light-gray);
+    margin: 40px 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.stat-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.stat-card p {
+    color: var(--dark-gray);
+    font-size: 16px;
+}
+
+/* Mission & Vision */
+.mission-vision {
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.mission, .vision {
+    padding: 40px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mission h2, .vision h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.mission p, .vision p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.step {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.step p {
+    font-size: 16px;
+    color: var(--dark-gray);
+}
+
+/* Our Team */
+.our-team {
+    padding: 80px 0;
+}
+
+.our-team h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* CTA Section */
+.about-cta {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-cta h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    padding: 15px 40px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .stats-grid,
+    .steps-grid,
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 36px;
+    }
+
+    .about-hero p {
+        font-size: 20px;
+    }
+
+    .stats-grid,
+    .steps-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        padding: 20px;
+    }
+}
+
+/* Animation Effects */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover Effects */
+.stat-card:hover,
+.step:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}

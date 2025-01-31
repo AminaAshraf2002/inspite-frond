@@ -1,0 +1,215 @@
+/* Modern Business Details Page Styling */
+:root {
+    /* Color Palette */
+    --primary-color: #2962FF;      /* Vibrant blue */
+    --secondary-color: #4A5568;    /* Dark gray */
+    --background-color: #F7FAFC;   /* Light grayish blue */
+    --text-primary: #1A202C;       /* Deep charcoal */
+    --text-secondary: #4A5568;     /* Muted gray */
+    --border-color: #E2E8F0;       /* Soft border gray */
+    --white: #FFFFFF;
+
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Global Resets and Base Styles */
+.business-details-page {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-color);
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 2rem;
+}
+
+/* Business Overview Section */
+.business-overview {
+    background-color: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.business-overview:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Business Header */
+.business-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.business-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Membership Badge */
+.membership-badge {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    align-items: center;
+}
+
+/* Specific and high-specificity selector */
+.star-rating .star {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #E2E8F0 !important; /* Neutral color for inactive stars */
+    margin-right: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.star-rating .star.filled {
+    color: #FFD700 !important; /* Ensures yellow color */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+/* Contact Information */
+.contact-info {
+    background-color: #F7FAFC;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.contact-item .icon {
+    margin-right: 1rem;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+/* Services Section */
+.business-services {
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.service-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Service Features */
+.service-features {
+    background-color: #F7FAFC;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.service-features ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+/* Purchase Button */
+.purchase-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.purchase-button:hover {
+    background-color: #1E40AF; /* Slightly darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .business-details-page {
+        padding: 1rem;
+    }
+
+    .business-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .business-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .service-price {
+        margin-top: 0.5rem;
+    }
+}
+
+/* Accessibility and Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .business-details-page {
+        background: none;
+        box-shadow: none;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+}

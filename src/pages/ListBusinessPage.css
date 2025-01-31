@@ -1,0 +1,224 @@
+.list-business-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .list-business-hero {
+    background-image: url(../assets/listb.webp);
+    color: #fff;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    min-height: 300px;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .list-business-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .list-business-subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .business-form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .form-section {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1.5rem;
+  }
+  
+  .form-section-title {
+    font-size: 1.4rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 600;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: #007bff;
+    border-color: #007bff;
+  }
+  
+  .membership-card {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.membership-option:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #007bff;
+}
+
+.membership-label {
+  display: block;
+  cursor: pointer;
+}
+
+  
+ 
+  
+  .media-upload {
+    border: 2px dashed #ddd;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .media-upload:hover {
+    border-color: #007bff;
+  }
+  
+  .media-upload svg {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .verification-notice {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .verification-notice svg {
+    font-size: 1.5rem;
+    color: #ffc107;
+    margin-right: 0.5rem;
+  }
+  
+  .form-actions {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .list-business-container {
+      padding: 1.5rem;
+    }
+  
+    .list-business-hero {
+      padding: 3.5rem 2rem;
+    }
+  
+    .hero-content {
+      max-width: 100%;
+    }
+  
+    .list-business-title {
+      font-size: 2.75rem;
+      margin-top: 40px;
+    }
+  
+    .list-business-subtitle {
+      font-size: 1.375rem;
+    }
+  
+    .form-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .membership-options {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .list-business-title {
+      font-size: 2.1rem;
+      margin-top: 40px;
+    }
+  
+    .list-business-subtitle {
+      font-size: 1.25rem;
+    }
+  
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .membership-options {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .list-business-title {
+      font-size: 1.7rem;
+      margin-top: 30px;
+    }
+  
+    .list-business-subtitle {
+      font-size: 1.1rem;
+    }
+  }

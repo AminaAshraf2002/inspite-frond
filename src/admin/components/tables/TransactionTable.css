@@ -1,0 +1,428 @@
+/* components/tables/TransactionTable.css */
+.transaction-table-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Table Header */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.date-filter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+}
+
+.date-filter input[type="date"] {
+    padding: 4px 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.export-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #f3f4f6;
+    border: none;
+    border-radius: 6px;
+    color: #374151;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.export-btn:hover {
+    background-color: #e5e7eb;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+.transaction-table th {
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.transaction-table th:hover {
+    background-color: #f3f4f6;
+}
+
+.transaction-table th svg {
+    margin-left: 4px;
+    vertical-align: middle;
+    opacity: 0.6;
+}
+
+.transaction-table td {
+    padding: 16px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.transaction-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* ID Cell */
+.id-cell {
+    font-family: monospace;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* Business Info */
+.business-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.business-name {
+    font-weight: 500;
+    color: #111827;
+}
+
+.business-email {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Type Badge */
+.type-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.type-badge.commission {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+.type-badge.membership {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.type-badge.refund {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* Amount Cell */
+.amount-cell {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.amount.positive {
+    color: #059669;
+}
+
+.amount.negative {
+    color: #dc2626;
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-badge.completed {
+    background-color: #dcfce7;
+    color: #059669;
+}
+
+.status-badge.pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.status-badge.failed {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.status-badge.processing {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+/* Date Info */
+.date-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.date {
+    color: #111827;
+}
+
+.time {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.action-btn.view:hover {
+    color: #3b82f6;
+}
+
+.action-btn.download:hover {
+    color: #059669;
+}
+
+/* More Actions Dropdown */
+.more-actions {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    min-width: 160px;
+    z-index: 10;
+    display: none;
+}
+
+.more-actions:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    border: none;
+    background: none;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdown-menu button:hover {
+    background-color: #f3f4f6;
+}
+
+/* Table Footer */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.rows-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.rows-per-page select {
+    padding: 4px 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 4px;
+}
+
+.page-number {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-number:hover:not(.active) {
+    background-color: #f3f4f6;
+}
+
+.page-number.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.pagination-btn {
+    padding: 6px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #f3f4f6;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Loading State */
+.transaction-table-container.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading-row td {
+    padding: 32px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* Empty State */
+.empty-state {
+    padding: 48px 24px;
+    text-align: center;
+    color: #6b7280;
+}
+
+.empty-state p {
+    margin: 8px 0 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .transaction-table {
+        min-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .date-filter {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .export-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .table-footer {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .rows-per-page,
+    .pagination {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .date-filter {
+        flex-direction: column;
+    }
+    
+    .pagination {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .page-numbers {
+        order: -1;
+    }
+}

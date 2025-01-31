@@ -1,0 +1,104 @@
+/* components/common/StatusBadge.css */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Sizes */
+.status-badge.small {
+    padding: 2px 8px;
+    font-size: 11px;
+}
+
+.status-badge.medium {
+    padding: 4px 12px;
+    font-size: 12px;
+}
+
+.status-badge.large {
+    padding: 6px 16px;
+    font-size: 14px;
+}
+
+/* Status Colors */
+.status-badge.success {
+    background-color: #dcfce7;
+    color: #059669;
+}
+
+.status-badge.warning {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.status-badge.error {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.status-badge.info {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+.status-badge.default {
+    background-color: #f3f4f6;
+    color: #6b7280;
+}
+
+/* Icon Styles */
+.status-badge svg {
+    flex-shrink: 0;
+}
+
+/* Animation */
+.status-badge.processing svg {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hover Effects */
+.status-badge:hover {
+    filter: brightness(0.95);
+}
+
+/* Status-specific hover effects */
+.status-badge.success:hover {
+    background-color: #bbf7d0;
+}
+
+.status-badge.warning:hover {
+    background-color: #fde68a;
+}
+
+.status-badge.error:hover {
+    background-color: #fecaca;
+}
+
+.status-badge.info:hover {
+    background-color: #c7d2fe;
+}
+
+.status-badge.default:hover {
+    background-color: #e5e7eb;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .status-badge.large {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+}

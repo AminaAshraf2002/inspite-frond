@@ -1,0 +1,289 @@
+/* components/tables/BusinessTable.css */
+.business-table-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.business-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Header Styles */
+.business-table thead th {
+    background-color: #f9fafb;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.business-table thead th:hover {
+    background-color: #f3f4f6;
+}
+
+.sort-indicator {
+    margin-left: 4px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.sort-indicator.asc {
+    transform: rotate(180deg);
+}
+
+/* Table Body Styles */
+.business-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.2s ease;
+}
+
+.business-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.business-table td {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #111827;
+}
+
+/* Business Info Styles */
+.business-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.business-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.business-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.business-info .name {
+    font-weight: 500;
+    color: #111827;
+}
+
+.business-info .email {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Status Badge Styles */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-badge.active {
+    background-color: #dcfce7;
+    color: #059669;
+}
+
+.status-badge.pending {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.status-badge.suspended {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* Membership Badge Styles */
+.membership-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.membership-badge.prime-a {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+.membership-badge.prime-b {
+    background-color: #ddd6fe;
+    color: #7c3aed;
+}
+
+.membership-badge.prime-c {
+    background-color: #fae8ff;
+    color: #c026d3;
+}
+
+/* Action Buttons Styles */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.action-btn.view:hover {
+    color: #3b82f6;
+}
+
+.action-btn.edit:hover {
+    color: #059669;
+}
+
+.action-btn.delete:hover {
+    color: #dc2626;
+}
+
+/* More Actions Dropdown */
+.more-actions {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    min-width: 160px;
+    z-index: 10;
+    display: none;
+}
+
+.more-actions:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    border: none;
+    background: none;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdown-menu button:hover {
+    background-color: #f3f4f6;
+}
+
+/* Table Footer Styles */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.rows-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.rows-per-page select {
+    padding: 4px 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination-btn {
+    padding: 6px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #f3f4f6;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .business-table-container {
+        overflow-x: auto;
+    }
+    
+    .business-table {
+        min-width: 800px;
+    }
+}
+
+@media (max-width: 640px) {
+    .table-footer {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .pagination {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

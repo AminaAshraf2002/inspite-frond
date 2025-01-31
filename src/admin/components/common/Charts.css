@@ -1,0 +1,107 @@
+/* components/common/Charts.css */
+.chart-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container .recharts-cartesian-grid-horizontal line,
+.chart-container .recharts-cartesian-grid-vertical line {
+    stroke: #e5e7eb;
+}
+
+.chart-container .recharts-tooltip-wrapper {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container .recharts-default-tooltip {
+    background-color: white !important;
+    border: none !important;
+    border-radius: 8px;
+    padding: 12px !important;
+}
+
+.chart-container .recharts-tooltip-label {
+    color: #374151;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.chart-container .recharts-tooltip-item {
+    color: #6b7280 !important;
+    font-size: 13px;
+    padding: 4px 0 !important;
+}
+
+.chart-container .recharts-tooltip-item-name {
+    color: #374151 !important;
+}
+
+.chart-container .recharts-tooltip-item-separator {
+    margin: 0 4px !important;
+}
+
+.chart-container .recharts-legend-wrapper {
+    padding: 16px 0 0 !important;
+}
+
+.chart-container .recharts-legend-item {
+    padding: 0 16px !important;
+}
+
+.chart-container .recharts-legend-item-text {
+    color: #374151 !important;
+    font-size: 13px;
+}
+
+.chart-container .recharts-xAxis .recharts-cartesian-axis-tick-value,
+.chart-container .recharts-yAxis .recharts-cartesian-axis-tick-value {
+    font-size: 12px;
+    fill: #6b7280;
+}
+
+/* Specific Chart Styles */
+.line-chart-container .recharts-line-curve {
+    stroke-width: 2;
+}
+
+.line-chart-container .recharts-line-dots circle {
+    fill: white;
+    stroke-width: 2;
+}
+
+.bar-chart-container .recharts-rectangle {
+    rx: 4;
+    ry: 4;
+}
+
+.pie-chart-container .recharts-sector {
+    stroke: white;
+    stroke-width: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chart-container {
+        padding: 16px;
+    }
+
+    .chart-container .recharts-legend-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 16px;
+    }
+
+    .chart-container .recharts-default-legend {
+        text-align: center;
+    }
+
+    .chart-container .recharts-legend-item {
+        display: inline-block;
+        margin: 4px 8px !important;
+    }
+}
