@@ -1,7 +1,8 @@
+// src/pages/LoginPage.js
 import React, { useState } from 'react';
 import { Eye, Mail, Building, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { login, adminLogin } from '../services/api/auth';
+import authService from '../services/authService';
 import './LoginPage.css';
 
 const LoginPage = () => {
@@ -30,7 +31,7 @@ const LoginPage = () => {
     setError('');
 
     try {
-      const loginFunction = isBusinessLogin ? login : adminLogin;
+      const loginFunction = isBusinessLogin ? authService.login : authService.adminLogin;
       const response = await loginFunction(formData.email, formData.password);
 
       localStorage.setItem('token', response.token);
@@ -58,6 +59,7 @@ const LoginPage = () => {
           <button
             className={`toggle-button ${isBusinessLogin ? 'active' : ''}`}
             onClick={() => setIsBusinessLogin(true)}
+            type="button"
           >
             <Building size={20} />
             <span>Business</span>
@@ -65,6 +67,7 @@ const LoginPage = () => {
           <button
             className={`toggle-button ${!isBusinessLogin ? 'active' : ''}`}
             onClick={() => setIsBusinessLogin(false)}
+            type="button"
           >
             <User size={20} />
             <span>Admin</span>

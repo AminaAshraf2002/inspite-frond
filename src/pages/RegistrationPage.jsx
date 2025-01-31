@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Eye } from 'lucide-react';
-import { register } from '../services/api/auth';
+import { authService } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
 import './RegistrationPage.css';
 
@@ -58,7 +58,7 @@ const RegistrationPage = () => {
 
         try {
             const { confirmPassword, agreeToTerms, ...registrationData } = formData;
-            const response = await register(registrationData);
+            const response = await authService.register(registrationData);
 
             // Store authentication data
             localStorage.setItem('token', response.token);

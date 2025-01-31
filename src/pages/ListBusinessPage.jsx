@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ListBusinessPage.css';
 import { FaUpload } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { createBusiness } from '../services/api/businessAPI';
+import { createBusiness } from '../services/api/businessService';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AOS from 'aos';
