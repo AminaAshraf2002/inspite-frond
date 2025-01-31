@@ -1,7 +1,7 @@
 
 
 // Base URL of your backend
-const API_URL = 'http://localhost:5000/api';
+const API_URL = "https://info-server-1-6h2i.onrender.com"
 
 // Business/Regular user login
 export const login = async (email, password) => {

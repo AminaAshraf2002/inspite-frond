@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000'; // Add this at the top
+const BASE_URL = "https://info-server-1-6h2i.onrender.com"; // Add this at the top
 
 export async function createBusiness(token, formData) {
     try {
