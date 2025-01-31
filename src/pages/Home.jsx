@@ -2,7 +2,10 @@ import React from 'react';
 import { FaStar, FaCheckCircle, FaUser, FaArrowRight } from 'react-icons/fa';
 import './Home.css';
 import image1 from '../assets/bgcover.jpg';
-import myImage1 from '../assets/ticket.webp';
+import myImage1 from '../assets/badge.webp';
+import business1 from '../assets/business1.jpg';
+import business2 from '../assets/business2.jpg';
+import business3 from '../assets/business3.jpg';
 
 const Home = () => {
   return (
@@ -14,8 +17,11 @@ const Home = () => {
           <div className="hero-content">
             <h1 data-aos="fade-up">List Your Business for Free</h1>
             <h2 data-aos="fade-up" data-aos-delay="200">Pay Only When You Sell!</h2>
-            <button className="cta-button" data-aos="fade-up" data-aos-delay="400">
-              Start Listing Today <FaArrowRight />
+            <button
+              onClick={() => window.location.href = '/list-business'}
+              className="btn btn-warning"
+            >
+              List Your Business
             </button>
           </div>
 
@@ -24,20 +30,20 @@ const Home = () => {
 
       {/* Introduction Section */}
       <section className="about">
-            <div className="container">
-                <div className="about-wrapper">
-                    <div className="intro-image" data-aos="fade-up">
-                        <img src={image1} alt="About EBNBIZNET.COM" />
-                    </div>
-                    <div className="about-content">
-                        <h4>ABOUT US</h4>
-                        <h2>Empowering Businesses Worldwide with EBNBIZNET.COM</h2>
-                        <p>EBNBIZNET.COM is a global business promotion platform that enables businesses to register and list their services and products for free. Operating on a commission-based model, we charge a percentage only upon successful sales, ensuring a risk-free experience for businesses.</p>
-                        <p>Incorporated in New York, EBNBIZNET.COM has been serving businesses for over five years, offering a seamless marketplace to connect buyers and sellers. Our platform provides three membership categories tailored to business turnover, ensuring fair and flexible opportunities for enterprises of all sizes.</p>
-                    </div>
-                </div>
+        <div className="container">
+          <div className="about-wrapper">
+            <div className="intro-image" data-aos="fade-up">
+              <img src={image1} alt="About EBNBIZNET.COM" />
             </div>
-        </section>
+            <div className="about-content">
+              <h4>ABOUT US</h4>
+              <h2>Empowering Businesses Worldwide with EBNBIZNET.COM</h2>
+              <p>EBNBIZNET.COM is a global business promotion platform that enables businesses to register and list their services and products for free. Operating on a commission-based model, we charge a percentage only upon successful sales, ensuring a risk-free experience for businesses.</p>
+              <p>Incorporated in New York, EBNBIZNET.COM has been serving businesses for over five years, offering a seamless marketplace to connect buyers and sellers. Our platform provides three membership categories tailored to business turnover, ensuring fair and flexible opportunities for enterprises of all sizes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Benefits Section */}
       <section className="benefits">
@@ -76,7 +82,7 @@ const Home = () => {
           <div className="membership-grid">
             <div className="membership-card featured" data-aos="fade-up">
               <div className="card-image">
-              <img src={myImage1}  alt="Prime A" />
+                <img src={myImage1} alt="Prime A" />
               </div>
               <div className="card-content">
                 <h3>Prime A</h3>
@@ -121,25 +127,81 @@ const Home = () => {
       </section>
 
       {/* Featured Businesses */}
-      <section className="featured-businesses">
+      <section className="featured-businesses py-5">
         <div className="container">
-          <h2 data-aos="fade-up">Featured Businesses</h2>
-          <div className="business-grid">
-            {[1, 2, 3].map((business) => (
-              <div key={business} className="business-card" data-aos="fade-up">
-                <div className="business-image"></div>
-                <div className="business-content">
-                  <span className={`prime-badge prime-${business}`}>Prime {String.fromCharCode(64 + business)}</span>
-                  <h3>Business Name {business}</h3>
-                  <p>Leading provider of quality services and products.</p>
-                  <div className="rating">
-                    {[...Array(5)].map((_, i) => (
-                      <FaStar key={i} className="star-icon" />
-                    ))}
+          <h2 className="text-center mb-4">Featured Businesses</h2>
+          <div className="row">
+            {/* Card 1 */}
+            <div className="col-md-4 mb-4">
+              <div className="card h-100">
+                <img 
+                  src={business1}
+                  className="card-img-top" 
+                  alt="Business 1"
+                  style={{ height: "200px", objectFit: "cover" }}
+                />
+                <div className="card-body">
+                  <span className="badge bg-warning mb-2">Prime A</span>
+                  <h5 className="card-title">AI-Powered B2B Lead Generation Tool</h5>
+                  <p className="card-text">Leading provider of quality services and products.</p>
+                  <div className="text-warning">
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Card 2 */}
+            <div className="col-md-4 mb-4">
+              <div className="card h-100">
+                <img 
+                  src={business2}
+                  className="card-img-top" 
+                  alt="Business 2"
+                  style={{ height: "200px", objectFit: "cover" }}
+                />
+                <div className="card-body">
+                  <span className="badge bg-secondary mb-2">Prime B</span>
+                  <h5 className="card-title"> White-Label Software Development Agency</h5>
+                  <p className="card-text">Leading provider of quality services and products.</p>
+                  <div className="text-warning">
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="col-md-4 mb-4">
+              <div className="card h-100">
+                <img 
+                  src={business3}
+                  className="card-img-top" 
+                  alt="Business 3"
+                  style={{ height: "200px", objectFit: "cover" }}
+                />
+                <div className="card-body">
+                  <span className="badge bg-bronze mb-2">Prime C</span>
+                  <h5 className="card-title">Digital Marketing & SEO Agency for B2B Brands</h5>
+                  <p className="card-text">Leading provider of quality services and products.</p>
+                  <div className="text-warning">
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
