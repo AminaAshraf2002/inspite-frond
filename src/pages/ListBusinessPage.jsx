@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Upload } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import  businessService from '../services/businesService';
+import  businessService from '../services/businessService';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AOS from 'aos';
